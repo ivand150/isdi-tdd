@@ -30,6 +30,7 @@
 // 01/04/2014 | 1000.00 | 1000.00
 
 const LOCALE = "es-ES"
+const ERROR_NEGATIVE_NUMBER = "The amount must be positive"
 
 interface Operation {
     amount: number
@@ -58,7 +59,7 @@ class Account {
     operations = new Operations()
 
     private checkAmount (amount: number): void {
-        if (amount < 0) throw new Error("The amount must be positive")
+        if (amount < 0) throw new Error(ERROR_NEGATIVE_NUMBER)
     }
 
     public  deposit(amount: number): void {
